@@ -1,7 +1,10 @@
 'use strict';
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
-admin.initializeApp(functions.config().firebase);
+admin.initializeApp({
+	credential: admin.credential.applicationDefault(),
+	databaseURL: 'https://pwfridge-89b1d.firebaseio.com'
+});
 
 const firestore = admin.firestore();
 /**
