@@ -1,0 +1,176 @@
+<style>
+    .main div.fridge-empty {
+        display: none;
+    }
+    
+    .main.fridge-empty div.fridge-empty {
+        display: block;
+    }
+    
+    .main.fridge-empty ul.fridge-collection {
+        display: none;
+    }
+    
+    .myfridge__main-image {
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .fridge-collection {
+        margin-top: 0px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .fridge-collection .fridge-item.notConfirmed{
+        opacity: 0.5;
+        background-color: rgb(251, 251, 251);
+    }
+
+    .row-fridge-collection {
+        margin-bottom: 0;
+    }
+    
+    .item-expiry-date {
+        text-align: right;
+    }
+    
+    .collection .fridge-item {
+        padding: 12px 10px;
+        animation-duration: .5s;
+        border-bottom: 1px solid #BDBDBD;
+    }
+    
+    .btn-add-product {
+        position: fixed;
+        bottom: 0;
+        margin-bottom: 20px;
+        margin-right: 15px;
+        right: 0;
+        background-color: #00675c;
+    }
+    
+    .brn-add-product:hover {
+        background-color: #00675c;
+    }
+    
+    .store-text {
+        color: white;
+    }
+    
+    .removableFridgeItem {
+        position: relative;
+    }
+    
+    .fridge-item_editingDiv{
+        position: absolute;
+        left: -100%;
+        top: 0;
+        height: calc(100% + 1px);
+        background-color: #a6a6a6;
+        padding-right: 15px;
+        width: 100%;
+        display: flex;
+        color: white;
+        font-size: 18px;
+        justify-content: flex-end;   
+    }
+
+    .fridge-item_deletionDiv {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        height: 100%;
+        background-color: #F44336;
+        height: calc(100% + 1px);
+        padding-left: 15px;
+        width: 300%;
+        color: white;
+        font-size: 18px;
+    }
+   
+    .modal-content .input-field label:not(.label-icon) {
+        -webkit-transform: translateY(-14px) scale(0.8);
+        transform: translateY(-14px) scale(0.8);
+    }
+
+    .tap-target{
+        color:white;
+        background-color:#00675c;
+    }
+</style>
+<div class="row fridge-empty">
+    <div class="col s12 valign-wrapper myfridge__main-image">
+        <img class="s12" src="https://image.flaticon.com/icons/svg/135/135763.svg" width="150px">
+    </div>
+
+    <h5 class="store-text col s12 center-align">Store Accounts</h5>
+    <p class="store-text col s10 offset-s1 center-align">A naked women robbed a bank. Nobody could remember her face / My dog used to chase people on a bike a lot. It got so bad, finally I had to take his bike away. </p>
+</div>
+<ul class="collection fridge-collection">
+
+    <template id="templateRemovableFridgeItem"><li data-id="banana" class="collection-item fridge-item removableFridgeItem">
+        <div class="row row-fridge-collection valign-wrapper">
+            <div class="col s6 truncate fridge-item-name">Smoked Turkey that I super duper hate</div>
+            <div class="col s3 center-align truncate fridge-item-quantity">200 gram</div>
+            <div class="col s3 item-expiry-date truncate fridge-item-time-left">30 days</div>
+        </div>
+        <div class="fridge-item_editingDiv valign-wrapper"><i class="material-icons">mode_edit</i>&nbsp;Edit</div>
+        <div class="fridge-item_deletionDiv valign-wrapper"><i class="material-icons">delete</i>&nbsp;Delete</div>
+    </li></template>
+</ul>
+
+<a id="menu" class="btn-floating btn-large waves-effect waves-light btn-add-product z-depth-3"><i class="material-icons">add</i></a>
+
+<!-- Tap Target Structure -->
+<div class="tap-target" data-activates="menu">
+    <div class="tap-target-content">
+        <h5>Add product from here</h5>
+        <p>or make a purchase from a store you have connected with an all products will appear in here</p>
+    </div>
+</div>
+
+<div id="modal-add-item" class="modal modal-item">
+    <div class="modal-content">
+        <div class="input-field">
+            <input id="item_name" type="text" class="validate">
+            <label for="item_name">Item Name</label>
+        </div>
+        <div class="input-field">
+            <input id="item_expiry" type="text" class="datepicker">
+            <label for="item_expiry">Expiry Date</label>
+        </div>
+        <div class="row">
+            <div class="input-field col s5">
+                <input id="item-quantity" type="number" class="validate">
+                <label for="item-quantity" class="active">Quantity</label>
+            </div>
+
+            <div class="input-field col s7">
+                <select id="item-quantity-units">
+                    <optgroup label="Volume">
+                        <option value="ml">milliliters</option>
+                        <option value="dl">deciliters</option>
+                        <option value="l">liters</option>
+                    </optgroup>
+                    <optgroup label="Weight">
+                        <option value="mg">milligrams</option>
+                        <option value="g">grams</option>
+                        <option value="kg">kilograms</option>
+                    </optgroup>
+                </select>
+                <label style="-webkit-transform: translateY(12px);transform: translateY(12px);">Optgroups</label>
+            </div>
+<!--
+            <div class="input-field col s6">
+                <input id="item-quantity-units" type="number" class="validate valid">
+                <label for="item-quantity-units" class="active">Units</label>
+            </div>-->
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+        <a href="#!" class="modal-btn-add-product modal-action modal-close waves-effect waves-green btn-flat">Add</a>
+    </div>
+</div>

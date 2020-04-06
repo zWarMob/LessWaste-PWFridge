@@ -1,0 +1,124 @@
+<style>
+    #senpai1 {
+        display: none;
+    }
+    
+    #senpai2 {
+        display: block;
+    }
+    
+    .modal-item .input-field label {
+        left: 0;
+        color: rgba(0, 0, 0, 0.87);
+    }
+    /*
+    .main {
+        background-color: darkgrey;
+    }
+    
+    .fridge-collection {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 15px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .row-fridge-collection {
+        margin-bottom: 0;
+    }
+    
+    .item-expiry-date {
+        text-align: right;
+    }
+    
+    .collection .fridge-item {
+        padding: 12px 10px;
+    }
+    
+    .btn-add-product {
+        position: fixed;
+        bottom: 0;
+        margin-bottom: 20px;
+        margin-right: 15px;
+        right: 0;
+    }
+    
+    .removableFridgeItem {
+        position: relative;
+    }
+    
+    .fridge-item_deletionDiv {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        height: 46px;
+        background-color: red;
+        padding-left: 15px;
+        min-width: 120px;
+    }
+*/
+
+</style>
+<!-- Modal Structure -->
+<div id="modal-add-item" class="modal modal-item">
+    <div class="modal-content">
+        <div class="input-field">
+            <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+        </div>
+        <div class="input-field">
+            <input id="item_name" type="text" class="validate">
+            <label for="item_name">Item Name</label>
+        </div>
+        <div class="input-field">
+            <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+        </div>
+        <div class="input-field">
+            <input id="item_expiry" type="text" class="datepicker validate">
+            <label for="item_expiry">Expiry Date</label>
+        </div>
+        <div class="input-field">
+            <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Add</a>
+    </div>
+</div>
+
+<script>
+    // MODAL ADD ITEM SCRIPTS
+    $(document).ready(function() {
+        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+    });
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15, // Creates a dropdown of 15 years to control year,
+        today: 'Today',
+        clear: 'Clear',
+        close: 'Ok',
+        closeOnSelect: false // Close upon selecting a date,
+    });
+
+</script>

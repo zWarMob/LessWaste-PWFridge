@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f0f8ff">
+    <title></title>
+
+    <!-- MANIFEST -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Skeleton stylesheet-->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- update the version number as needed -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script src="/__/firebase/4.8.0/firebase-auth.js"></script>
+    <script src="/__/firebase/4.8.0/firebase-firestore.js"></script>
+    <!-- <script defer src="/__/firebase/4.8.0/firebase-database.js"></script> -->
+    <script defer src="/__/firebase/4.8.0/firebase-messaging.js"></script>
+    <!-- <script defer src="/__/firebase/4.8.0/firebase-storage.js"></script> -->
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script src="/__/firebase/init.js"></script>
+    <script type="text/javascript"> 
+    </script>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Materialize //depends on jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>	
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert2@7.1.2/dist/sweetalert2.all.js"></script>
+    <!-- Hammer js -->
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+    <script src="scripts/itemslide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+
+
+</head>
+
+<body>
+    <div id="senpai1">
+        <div class="app-logo valign-wrapper">
+            <img id="logo" src="images/logo.png" alt="logo">
+        </div>
+
+        <div class="login-register-form valign-wrapper">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email" data-error="Please enter a valid email" data-success="">Email</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="">
+                    <label for="password" data-error="Password&nbsp;should&nbsp;be&nbsp;at&nbsp;least&nbsp;6&nbsp;characters&nbsp;long" data-success="">Password</label>
+                </div>
+                <div class="col s12">
+                    <a class="waves-effect waves-light btn login-register-btn">..</a>
+                </div>
+                <div class="col s12">
+                    <p class="center-align terms">Terms of Service and Privacy Policy </p>
+                </div>
+            </div>
+        </div>
+        <div class="flex-empty"></div>
+        <p class="center-align terms login-register-page-change"><span>..</span> <a href="#">..</a></p>
+    </div>
+
+    <div id="senpai2">
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <ul id="nav-mobile" class="left">
+                        <li>
+                            <a data-activates="slide-out" class="button-collapse" href="sass.html">
+                                <i class="material-icons">menu</i>
+                            </a>
+                        </li>
+                        <!--example <li><a href="collapsible.html">JavaScript</a></li>-->
+                    </ul>
+                    <p class="navbar__header left">My Fridge</p>
+                    <!--example <ul class="right hide-on-med-and-down">
+                <li class="butDrawer"><a href="sass.html">bd</a></li>
+                </ul>-->
+                </div>
+            </nav>
+        </div>
+        <div id="slide-out" class="side-nav" style="transform: translateX(0px);">
+            <ul>
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img src="/images/office.jpg">
+                        </div>
+                        <div class="row">
+                            <div class="col s4">
+                                <a class="" href="#!user">
+                                    <img class="circle" src="/images/yuna.jpg">
+                                </a>
+                            </div>
+                            <div class="col s8">
+                                <a href="#!name" class="">
+                                    <span class="white-text name">..</span>
+                                </a>
+                                <a href="#!email" class="">
+                                    <span class="white-text email">..</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a class="btn-my-fridge waves-effect" href="#!">
+                    <img class="icon-button-image" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzgxLjMxLDBIMTMwLjY5Yy0yMi40NzYsMC00MC43NjIsMTguMjg2LTQwLjc2Miw0MC43NjJ2MTM3LjEzMmgzMzIuMTQ0VjQwLjc2MkM0MjIuMDcyLDE4LjI4Niw0MDMuNzg2LDAsMzgxLjMxLDB6ICAgICBNMTc5Ljk0LDEzNC42MmgtMzAuNDE3di02MC45M2gzMC40MTdWMTM0LjYyeiIgZmlsbD0iIzY4Njk2YiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTg5LjkyOCwyMDguMzExdjI2Mi45MjdjMCwyMi40NzYsMTguMjg2LDQwLjc2Miw0MC43NjIsNDAuNzYyaDI1MC42MmMyMi40NzYsMCw0MC43NjItMTguMjg2LDQwLjc2Mi00MC43NjJWMjA4LjMxMSAgICBIODkuOTI4eiBNMTc5Ljk0LDMxMi41MTRoLTMwLjQxN3YtNjAuOTNoMzAuNDE3VjMxMi41MTR6IiBmaWxsPSIjNjg2OTZiIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==">
+                    <span>My Fridge</span></a>
+                </li>
+                <li><a class="btn-connect-stores waves-effect" href="#!">
+                    <img class="icon-button-image" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNMCwyMDhjMCwyOS43ODEsMjAuNDM4LDU0LjU5NCw0OCw2MS43NVY0ODBIMTZjLTguODEzLDAtMTYsNy4xNTYtMTYsMTZzNy4xODgsMTYsMTYsMTZoNDgwYzguODc1LDAsMTYtNy4xNTYsMTYtMTYgICBzLTcuMTI1LTE2LTE2LTE2aC0zMlYyNjkuNzVjMjcuNTYyLTcuMTU2LDQ4LTMxLjk2OSw0OC02MS43NXYtMTZIMFYyMDh6IE0zMjAsMjcyYzM1LjM3NSwwLDY0LTI4LjY1Niw2NC02NCAgIGMwLDI5Ljc4MSwyMC40MzgsNTQuNTk0LDQ4LDYxLjc1VjQ4MEgxOTJWMjcyYzM1LjM3NSwwLDY0LTI4LjY1Niw2NC02NEMyNTYsMjQzLjM0NCwyODQuNjg4LDI3MiwzMjAsMjcyeiBNMTc2LDI2OS43NVY0ODBIODAgICBWMjY5Ljc1YzI3LjU2My03LjE1Niw0OC0zMS45NjksNDgtNjEuNzVDMTI4LDIzNy43ODEsMTQ4LjQzOCwyNjIuNTk0LDE3NiwyNjkuNzV6IE00NDgsNDhINjRMMCwxNzZoNTEyTDQ0OCw0OHogTTEzNS4xODgsODMuNTYzICAgbC0zMiw2NGMtMS40MzgsMi44MTMtNC4yNSw0LjQzOC03LjE4OCw0LjQzOGMtMS4xODgsMC0yLjQwNi0wLjI1LTMuNTYzLTAuODQ0Yy0zLjkzOC0xLjk2OS01LjU2My02Ljc4MS0zLjU2My0xMC43MTlsMzItNjQgICBjMi0zLjkzOCw2Ljc4MS01LjUzMSwxMC43MTktMy41OTRDMTM1LjU2Myw3NC44MTMsMTM3LjEyNSw3OS42MjUsMTM1LjE4OCw4My41NjN6IE0xOTkuMTg4LDgzLjU2M2wtMzIsNjQgICBjLTEuNDM4LDIuODEzLTQuMjUsNC40MzgtNy4xODgsNC40MzhjLTEuMTg4LDAtMi40MDYtMC4yNS0zLjU2My0wLjg0NGMtMy45MzgtMS45NjktNS41NjMtNi43ODEtMy41NjMtMTAuNzE5bDMyLTY0ICAgYzItMy45MzgsNi44MTMtNS41MzEsMTAuNzE5LTMuNTk0QzE5OS41NjMsNzQuODEzLDIwMS4xMjUsNzkuNjI1LDE5OS4xODgsODMuNTYzeiBNMjY0LDE0NGMwLDQuNDM4LTMuNTYyLDgtOCw4ICAgYy00LjQwNiwwLTgtMy41NjMtOC04VjgwYzAtNC40MzgsMy41OTQtOCw4LThjNC40MzgsMCw4LDMuNTYzLDgsOFYxNDR6IE0zNTUuODc1LDE1MWMtMS4yNSwwLjY4OC0yLjU2MiwxLTMuODc1LDEgICBjLTIuODEyLDAtNS41NjItMS41LTctNC4xNTZsLTM1LTY0Yy0yLjEyNS0zLjg3NS0wLjY4OC04Ljc1LDMuMTg4LTEwLjg0NGMzLjgxMy0yLjEyNSw4Ljc1LTAuNzUsMTAuODc1LDMuMTU2bDM1LDY0ICAgQzM2MS4xMjUsMTQ0LjAzMSwzNTkuNzUsMTQ4LjkwNiwzNTUuODc1LDE1MXogTTQxOS41NjIsMTUxLjE1NkM0MTguNDM4LDE1MS43NSw0MTcuMjUsMTUyLDQxNiwxNTIgICBjLTIuOTM4LDAtNS43NS0xLjYyNS03LjEyNS00LjQzOGwtMzItNjRjLTItMy45MzgtMC4zNzUtOC43NSwzLjU2Mi0xMC43MTljMy44NzUtMS45NjksOC43NS0wLjM3NSwxMC43NSwzLjU5NGwzMiw2NCAgIEM0MjUuMTI1LDE0NC4zNzUsNDIzLjU2MiwxNDkuMTg4LDQxOS41NjIsMTUxLjE1NnogTTEzNiwzODYuNDM4di0zNi44NzVjLTQuNjg4LTIuODEyLTgtNy42ODgtOC0xMy41NjJjMC04Ljg0NCw3LjE4OC0xNiwxNi0xNiAgIGM4Ljg3NSwwLDE2LDcuMTU2LDE2LDE2YzAsNS44NzUtMy4yODEsMTAuNzUtOCwxMy41NjJ2MzYuODc1YzQuNzE5LDIuODEzLDgsNy42ODgsOCwxMy41NjNjMCw4Ljg0NC03LjEyNSwxNi0xNiwxNiAgIGMtOC44MTMsMC0xNi03LjE1Ni0xNi0xNkMxMjgsMzk0LjEyNSwxMzEuMzEzLDM4OS4yNSwxMzYsMzg2LjQzOHogTTY0LDE2YzAtOC44NDQsNy4xODgtMTYsMTYtMTZoMzUyYzguODc1LDAsMTYsNy4xNTYsMTYsMTYgICBzLTcuMTI1LDE2LTE2LDE2SDgwQzcxLjE4OCwzMiw2NCwyNC44NDQsNjQsMTZ6IE0yODAuNDM4LDM1Ny42NTZsLTExLjMxMi0xMS4zMTNsNDUuMjUtNDUuMjVsMTEuMzEyLDExLjMxM0wyODAuNDM4LDM1Ny42NTZ6ICAgIE0yODAuNDM4LDQwMi45MDZsLTExLjMxMi0xMS4zMTNsOTAuNS05MC41bDExLjMxMiwxMS4zMTNMMjgwLjQzOCw0MDIuOTA2eiBNMzU5LjYyNSwzNDYuMzQ0bDExLjMxMiwxMS4zMTNsLTQ1LjI1LDQ1LjI1ICAgbC0xMS4zMTItMTEuMzEzTDM1OS42MjUsMzQ2LjM0NHoiIGZpbGw9IiM2ODY5NmIiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+                    <span>Connect to stores</span></a>
+                </li>
+                <li><a class="btn-setting waves-effect" href="#!">
+                    <img class="icon-button-image" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDYxMiA2MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDYxMiA2MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzQ0LjI1LDI2Ny43NWMxMC40MDQsMTAuNDA0LDE1LjYwNiwyMy4xNTQsMTUuNjA2LDM4LjI1cy01LjIwMiwyNy44NDYtMTUuNjA2LDM4LjI1ICAgIHMtMjMuMTU0LDE1LjYwNi0zOC4yNSwxNS42MDZzLTI3Ljg0Ni01LjIwMi0zOC4yNS0xNS42MDZzLTE1LjYwNi0yMy4xNTQtMTUuNjA2LTM4LjI1czUuMjAyLTI3Ljg0NiwxNS42MDYtMzguMjUgICAgczIzLjE1NC0xNS42MDYsMzguMjUtMTUuNjA2UzMzMy44NDYsMjU3LjM0NiwzNDQuMjUsMjY3Ljc1eiBNNjEyLDMwNmMwLDI4LjE1Mi0zLjY3Miw1NS4yODQtMTEuMDE2LDgxLjM5NiAgICBjLTcuMzQ3LDI2LjEwOS0xNy42NDYsNTAuNDg3LTMwLjkwNiw3My4xMzRjLTEzLjI2LDIyLjY0NC0yOS4xNzIsNDMuMjQ4LTQ3LjczNiw2MS44MTIgICAgYy0xOC41NjIsMTguNTY0LTM5LjE2OCwzNC40NzktNjEuODEyLDQ3LjczNmMtMjIuNjQ2LDEzLjI2LTQ3LjAyMiwyMy41NjItNzMuMTM2LDMwLjkwNkMzNjEuMjg0LDYwOC4zMjgsMzM0LjE1Miw2MTIsMzA2LDYxMiAgICBzLTU1LjI4NC0zLjY3Mi04MS4zOTYtMTEuMDE2Yy0yNi4xMTItNy4zNDctNTAuNDktMTcuNjQ2LTczLjEzNC0zMC45MDZzLTQzLjI0OC0yOS4xNzItNjEuODEyLTQ3LjczNiAgICBjLTE4LjU2NC0xOC41NjItMzQuNDc2LTM5LjE2OC00Ny43MzYtNjEuODEyYy0xMy4yNi0yMi42NDYtMjMuNTYyLTQ3LjAyMi0zMC45MDYtNzMuMTM1QzMuNjcyLDM2MS4yODQsMCwzMzQuMTUyLDAsMzA2ICAgIHMzLjY3Mi01NS4yODQsMTEuMDE2LTgxLjM5NnMxNy42NDYtNTAuNDksMzAuOTA2LTczLjEzNHMyOS4xNzItNDMuMjQ4LDQ3LjczNi02MS44MTJzMzkuMTY4LTM0LjQ3Niw2MS44MTItNDcuNzM2ICAgIHM0Ny4wMjItMjMuNTYyLDczLjEzNC0zMC45MDZTMjc3Ljg0OCwwLDMwNiwwYzQyLjAyNCwwLDgxLjcwMiw4LjA1OCwxMTkuMDM0LDI0LjE3NHM2OS43NjgsMzcuOTQ0LDk3LjMwOCw2NS40ODQgICAgczQ5LjM2OCw1OS45NzYsNjUuNDg0LDk3LjMwOFM2MTIsMjYzLjk3Niw2MTIsMzA2eiBNNDg4Ljk4OCwyODUuODA0YzAtMi40NDgtMC45MTgtNC41OS0yLjc1NC02LjQyNnMtMy45NzktMi43NTQtNi40MjktMi43NTQgICAgbC00Ni41MTItNC44OTZjLTEuMjI0LTUuNzEyLTIuOTU4LTExLjExOC01LjIwMi0xNi4yMThjLTIuMjQ0LTUuMS00Ljc5NC0xMC4zMDItNy42NDctMTUuNjA2bDI5LjM3Ni0zNi4xMDggICAgYzMuNjcyLTQuNDg4LDMuNDY4LTguNzcyLTAuNjEyLTEyLjg1MmwtMjguMTUyLTI4LjE1MmMtMi4wNC0yLjA0LTQuMjgxLTMuMDYtNi43MjktMy4wNnMtNC40ODgsMC44MTYtNi4xMiwyLjQ0OGwtMzYuMTA4LDI5LjM3NiAgICBjLTUuMzA0LTIuODU2LTEwLjUwNi01LjQwNi0xNS42MDQtNy42NWMtNS4xMDMtMi4yNDQtMTAuNTA2LTMuOTc5LTE2LjIxOC01LjIwMmwtNC44OTYtNDYuNTEyYzAtMi40NDgtMC45MTgtNC41OS0yLjc1NC02LjQyNiAgICBzLTMuOTc5LTIuNzU0LTYuNDI2LTIuNzU0aC00MC4zOTJjLTIuNDQ4LDAtNC41OSwwLjkxOC02LjQyNiwyLjc1NHMtMi43NTQsMy45NzgtMi43NTQsNi40MjZsLTQuODk2LDQ2LjUxMiAgICBjLTUuNzEyLDEuMjI0LTExLjExOCwyLjk1OC0xNi4yMTgsNS4yMDJjLTUuMSwyLjI0NC0xMC4zMDIsNC43OTQtMTUuNjA2LDcuNjVMMjAzLjgsMTYyLjE4Yy0xLjYzMi0xLjYzMi0zLjY3Mi0yLjQ0OC02LjEyLTIuNDQ4ICAgIHMtNC42OTIsMS4wMi02LjczMiwzLjA2bC0yOC4xNTIsMjguMTUyYy00LjA4LDQuMDgtNC4yODQsOC4zNjQtMC42MTIsMTIuODUybDI5LjM3NiwzNi4xMDggICAgYy0yLjg1Niw1LjMwNC01LjQwNiwxMC41MDYtNy42NSwxNS42MDZjLTIuMjQ0LDUuMS0zLjk3OCwxMC41MDYtNS4yMDIsMTYuMjE4bC00Ni41MTIsNC44OTZjLTIuNDQ4LDAtNC41OSwwLjkxOC02LjQyNiwyLjc1NCAgICBzLTIuNzU0LDMuOTc4LTIuNzU0LDYuNDI2djQwLjM5MmMwLDIuNDQ1LDAuOTE4LDQuNTksMi43NTQsNi40MjZjMS44MzYsMS44MzYsMy45NzgsMi43NTQsNi40MjYsMi43NTRsNDYuNTEyLDQuODk2ICAgIGMxLjIyNCw1LjcxMywyLjk1OCwxMS4xMTYsNS4yMDIsMTYuMjE5YzIuMjQ0LDUuMSw0Ljc5NCwxMC4zMDIsNy42NSwxNS42MDRsLTI5LjM3NiwzNi4xMDggICAgYy0zLjY3Miw0LjQ4OC0zLjQ2OCw4Ljc3MSwwLjYxMiwxMi44NTJsMjguMTUyLDI4LjE1MmMyLjA0LDIuMDQsNC4yODQsMy4wNjEsNi43MzIsMy4wNjFzNC40ODgtMC44MTQsNi4xMi0yLjQ0NmwzNi4xMDgtMjkuMzc2ICAgIGM1LjMwNCwyLjg1NCwxMC41MDYsNS40MDMsMTUuNjA2LDcuNjQ3YzUuMSwyLjI0NCwxMC41MDYsMy45NzksMTYuMjE4LDUuMjAybDQuODk2LDQ2LjUxMmMwLDIuNDQ4LDAuOTE4LDQuNTkyLDIuNzU0LDYuNDI5ICAgIGMxLjgzNiwxLjgzNiwzLjk3OCwyLjc1NCw2LjQyNiwyLjc1NEgzMjYuMmMyLjQ0NywwLDQuNTktMC45MTgsNi40MjYtMi43NTRjMS44MzYtMS44MzcsMi43NTQtMy45NzksMi43NTQtNi40MjlsNC44OTYtNDYuNTEyICAgIGM1LjcxMi0xLjIyNCwxMS4xMTUtMi45NTgsMTYuMjE4LTUuMjAyYzUuMS0yLjI0NCwxMC4zMDItNC43OTQsMTUuNjA0LTcuNjQ4bDM2LjEwOCwyOS4zNzdjMS42MzIsMS42MzIsMy42NzIsMi40NDYsNi4xMiwyLjQ0NiAgICBzNC42ODktMS4wMjEsNi43MjktMy4wNjFsMjguMTUyLTI4LjE1MmM0LjA4LTQuMDgsNC4yODQtOC4zNjIsMC42MTItMTIuODUybC0yOS4zNzYtMzYuMTA4ICAgIGMyLjg1NC01LjMwNCw1LjQwMy0xMC41MDYsNy42NDctMTUuNjA0YzIuMjQ0LTUuMTAzLDMuOTc5LTEwLjUwNyw1LjIwMi0xNi4yMTlsNDYuNTEyLTQuODk2YzIuNDQ4LDAsNC41OTMtMC45MTgsNi40MjktMi43NTQgICAgczIuNzU0LTMuOTc5LDIuNzU0LTYuNDI2di00MC4zOTJINDg4Ljk4OHoiIGZpbGw9IiM2ODY5NmIiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+                    <span>Settings</span></a>
+                </li>
+                <li><a class="btn-terms waves-effect" href="#!">
+                    <img class="icon-button-image" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDM4MCAzODAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM4MCAzODA7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4Ij4KPGcgaWQ9IlhNTElEXzMwXyI+Cgk8cGF0aCBpZD0iWE1MSURfMzFfIiBkPSJNMjkwLDE3MEgxMjVWOTVjMC0zNS44NDEsMjkuMTU5LTY1LDY1LTY1YzM1Ljg0MSwwLDY1LDI5LjE1OSw2NSw2NXYzMGMwLDguMjg0LDYuNzE2LDE1LDE1LDE1ICAgczE1LTYuNzE2LDE1LTE1Vjk1YzAtNTIuMzgzLTQyLjYxNy05NS05NS05NWMtNTIuMzgzLDAtOTUsNDIuNjE3LTk1LDk1djc1aC01Yy0xMy44MDcsMC0yNSwxMS4xOTMtMjUsMjV2MTYwICAgYzAsMTMuODA3LDExLjE5MywyNSwyNSwyNWgyMDBjMTMuODA3LDAsMjUtMTEuMTkzLDI1LTI1VjE5NUMzMTUsMTgxLjE5MywzMDMuODA3LDE3MCwyOTAsMTcweiBNMTYwLDI1NWMwLTE2LjU2OSwxMy40MzEtMzAsMzAtMzAgICBjMTYuNTY4LDAsMzAsMTMuNDMxLDMwLDMwYzAsMTEuMTAzLTYuMDM1LDIwLjc4OS0xNSwyNS45NzdWMzI1aC0zMHYtNDQuMDIzQzE2Ni4wMzUsMjc1Ljc4OSwxNjAsMjY2LjEwMywxNjAsMjU1eiIgZmlsbD0iIzY4Njk2YiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+                    <span>Terms &amp; privacy policy</span></a>
+                </li>
+                <li><a class="waves-effect" href="#!">
+                    <img class="icon-button-image" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDUxMCA1MTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMCA1MTA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBpZD0iaGVscCI+CgkJPHBhdGggZD0iTTI1NSwwQzExNC43NSwwLDAsMTE0Ljc1LDAsMjU1czExNC43NSwyNTUsMjU1LDI1NXMyNTUtMTE0Ljc1LDI1NS0yNTVTMzk1LjI1LDAsMjU1LDB6IE0yODAuNSw0MzMuNWgtNTF2LTUxaDUxVjQzMy41eiAgICAgTTMzNC4wNSwyMzcuMTVMMzExLjEsMjYwLjFjLTIwLjM5OSwxNy44NTEtMzAuNiwzMy4xNS0zMC42LDcxLjRoLTUxdi0xMi43NWMwLTI4LjA1LDEwLjItNTMuNTUsMzAuNi03MS40TDI5MC43LDIxNC4yICAgIGMxMC4yLTcuNjUsMTUuMy0yMC40LDE1LjMtMzUuN2MwLTI4LjA1LTIyLjk1LTUxLTUxLTUxcy01MSwyMi45NS01MSw1MWgtNTFjMC01Ni4xLDQ1LjktMTAyLDEwMi0xMDJjNTYuMSwwLDEwMiw0NS45LDEwMiwxMDIgICAgQzM1NywyMDEuNDUsMzQ2LjgsMjIxLjg1LDMzNC4wNSwyMzcuMTV6IiBmaWxsPSIjNjg2OTZiIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                    <span>Help &amp; feedback</span></a>
+                </li>
+                <li><a class="waves-effect logout-btn" href="#!">
+                    <img class="icon-button-image" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4Ij4KPGc+Cgk8Zz4KCQk8Zz4KCQkJPHBhdGggZD0iTTUxMC4zNzEsMjI2LjUxM2MtMS4wODgtMi42MDMtMi42NDUtNC45NzEtNC42MjktNi45NTVsLTYzLjk3OS02My45NzljLTguMzQxLTguMzItMjEuODI0LTguMzItMzAuMTY1LDAgICAgIGMtOC4zNDEsOC4zNDEtOC4zNDEsMjEuODQ1LDAsMzAuMTY1bDI3LjU4NCwyNy41ODRIMzIwLjAxM2MtMTEuNzk3LDAtMjEuMzMzLDkuNTU3LTIxLjMzMywyMS4zMzNzOS41MzYsMjEuMzMzLDIxLjMzMywyMS4zMzMgICAgIGgxMTkuMTY4bC0yNy41ODQsMjcuNTg0Yy04LjM0MSw4LjM0MS04LjM0MSwyMS44NDUsMCwzMC4xNjVjNC4xNiw0LjE4MSw5LjYyMSw2LjI1MSwxNS4wODMsNi4yNTFzMTAuOTIzLTIuMDY5LDE1LjA4My02LjI1MSAgICAgbDYzLjk3OS02My45NzljMS45ODQtMS45NjMsMy41NDEtNC4zMzEsNC42MjktNi45NTVDNTEyLjUyNSwyMzcuNjA2LDUxMi41MjUsMjMxLjcxOCw1MTAuMzcxLDIyNi41MTN6IiBmaWxsPSIjNjg2OTZiIi8+CgkJCTxwYXRoIGQ9Ik0zNjIuNjgsMjk4LjY2N2MtMTEuNzk3LDAtMjEuMzMzLDkuNTU3LTIxLjMzMywyMS4zMzN2MTA2LjY2N2gtODUuMzMzVjg1LjMzM2MwLTkuNDA4LTYuMTg3LTE3LjcyOC0xNS4yMTEtMjAuNDM3ICAgICBsLTc0LjA5MS0yMi4yMjloMTc0LjYzNXYxMDYuNjY3YzAsMTEuNzc2LDkuNTM2LDIxLjMzMywyMS4zMzMsMjEuMzMzczIxLjMzMy05LjU1NywyMS4zMzMtMjEuMzMzdi0xMjggICAgIEMzODQuMDEzLDkuNTU3LDM3NC40NzcsMCwzNjIuNjgsMEgyMS4zNDdjLTAuNzY4LDAtMS40NTEsMC4zMi0yLjE5NywwLjQwNWMtMS4wMDMsMC4xMDctMS45MiwwLjI3Ny0yLjg4LDAuNTEyICAgICBjLTIuMjQsMC41NzYtNC4yNjcsMS40NTEtNi4xNjUsMi42NDVjLTAuNDY5LDAuMjk5LTEuMDQ1LDAuMzItMS40OTMsMC42NjFDOC40NCw0LjM1Miw4LjM3Niw0LjU4Nyw4LjIwNSw0LjcxNSAgICAgQzUuODgsNi41NDksMy45MzksOC43ODksMi41MzEsMTEuNDU2Yy0wLjI5OSwwLjU3Ni0wLjM2MywxLjE5NS0wLjU5NywxLjc5MmMtMC42ODMsMS42MjEtMS40MjksMy4yLTEuNjg1LDQuOTkyICAgICBjLTAuMTA3LDAuNjQsMC4wODUsMS4yMzcsMC4wNjQsMS44NTZjLTAuMDIxLDAuNDI3LTAuMjk5LDAuODExLTAuMjk5LDEuMjM3VjQ0OGMwLDEwLjE3Niw3LjE4OSwxOC45MjMsMTcuMTUyLDIwLjkwNyAgICAgbDIxMy4zMzMsNDIuNjY3YzEuMzg3LDAuMjk5LDIuNzk1LDAuNDI3LDQuMTgxLDAuNDI3YzQuODg1LDAsOS42ODUtMS42ODUsMTMuNTI1LTQuODQzYzQuOTI4LTQuMDUzLDcuODA4LTEwLjA5MSw3LjgwOC0xNi40OTEgICAgIHYtMjEuMzMzSDM2Mi42OGMxMS43OTcsMCwyMS4zMzMtOS41NTcsMjEuMzMzLTIxLjMzM1YzMjBDMzg0LjAxMywzMDguMjI0LDM3NC40NzcsMjk4LjY2NywzNjIuNjgsMjk4LjY2N3oiIGZpbGw9IiM2ODY5NmIiLz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                    <span>Log out</span></a>
+                </li>
+
+                <!--<li><a href="#!">
+                <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzgxLjMxLDBIMTMwLjY5Yy0yMi40NzYsMC00MC43NjIsMTguMjg2LTQwLjc2Miw0MC43NjJ2MTM3LjEzMmgzMzIuMTQ0VjQwLjc2MkM0MjIuMDcyLDE4LjI4Niw0MDMuNzg2LDAsMzgxLjMxLDB6ICAgICBNMTc5Ljk0LDEzNC42MmgtMzAuNDE3di02MC45M2gzMC40MTdWMTM0LjYyeiIgZmlsbD0iIzY4Njk2YiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTg5LjkyOCwyMDguMzExdjI2Mi45MjdjMCwyMi40NzYsMTguMjg2LDQwLjc2Miw0MC43NjIsNDAuNzYyaDI1MC42MmMyMi40NzYsMCw0MC43NjItMTguMjg2LDQwLjc2Mi00MC43NjJWMjA4LjMxMSAgICBIODkuOTI4eiBNMTc5Ljk0LDMxMi41MTRoLTMwLjQxN3YtNjAuOTNoMzAuNDE3VjMxMi41MTR6IiBmaWxsPSIjNjg2OTZiIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                First Link With Icon</a></li>
+                <li><a href="#!">Second Link</a></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li><a class="subheader">Subheader</a></li>-->
+            </ul>
+            <div class="flexFillGrow"></div>
+            <ul><!-- 
+                <li><a class="waves-effect logout-btn" href="#!"><i class="material-icons">navigate_before</i>Log out</a></li> -->
+            </ul>
+        </div>
+        <div class="main">
+
+        </div>
+        <div class="dialog-container" class="valign-wrapper">
+            ..
+        </div>
+    </div>
+
+    <div id="loader" class="valign-wrapper">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script defer type="text/javascript" src="scripts/app.js"></script>
+
+</body>
+
+</html>

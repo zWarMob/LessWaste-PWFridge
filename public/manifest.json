@@ -1,0 +1,38 @@
+{
+    "short_name": "LessWaste",
+    "name": "Less Waste",
+    "display": "standalone",
+    "start_url": "index.html",
+    "background_color": "#ffffff",
+    "theme_color": "aliceblue",
+    "description": "Progressive Web App",
+    "icons": [{
+        "src": "images/touch/manifest48.jpg",
+        "sizes": "48x48",
+        "type": "image/jpg"
+    }, {
+        "src": "images/touch/manifest72.jpg",
+        "sizes": "72x72",
+        "type": "image/jpg"
+    }, {
+        "src": "images/touch/manifest96.jpg",
+        "sizes": "96x96",
+        "type": "image/jpg"
+    }, {
+        "src": "images/touch/manifest144.jpg",
+        "sizes": "144x144",
+        "type": "image/jpg"
+    }, {
+        "src": "images/touch/manifest168.png",
+        "sizes": "168x168",
+        "type": "image/png"
+    }, {
+        "src": "images/touch/manifest192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }, {
+        "src": "images/touch/manifest512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }]
+}

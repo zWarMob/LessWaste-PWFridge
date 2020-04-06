@@ -1,0 +1,27 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /stores/{allChildren=**} {
+      allow read: if true;
+    }
+    match /user-settings/{userId} {
+      function isUserAuthorized() {
+        return userId == request.auth.uid || request.auth.token.email == "fridgeprojectview@gmail.com" || request.auth.uid == "c0lY7XoIgVMLGgxn06CbVlPrr5U2";
+      }
+
+      allow read,write: if userId == request.auth.uid || request.auth.token.email == "fridgeprojectview@gmail.com" || request.auth.uid == "c0lY7XoIgVMLGgxn06CbVlPrr5U2";
+      match /connected-stores/{allChildren=**} {
+        allow read,write: if isUserAuthorized();
+      }
+    }
+    match /fridges/{userId} {
+      function isUserAuthorized() {
+        return userId == request.auth.uid || request.auth.token.email == "fridgeprojectview@gmail.com" || request.auth.uid == "c0lY7XoIgVMLGgxn06CbVlPrr5U2";
+      }
+
+      allow read,write: if userId == request.auth.uid || request.auth.token.email == "fridgeprojectview@gmail.com" || request.auth.uid =="c0lY7XoIgVMLGgxn06CbVlPrr5U2";
+      match /products/{allChildren=**} {
+        allow read,write: if isUserAuthorized();
+      }
+    }
+  }
+}

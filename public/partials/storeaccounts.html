@@ -1,0 +1,146 @@
+<style>
+     #senpai2 {
+        background-color: #00685b;
+        min-height: 100%;
+        width: 100%;
+        color:white;
+    }
+    
+    #senpai2 h5{
+        margin-top: 36px;
+        margin-bottom:16px;
+    }
+
+    .intro-text {
+        width: 40%;
+    }
+    
+    .main {
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 56px);
+        width: 100%;
+        background-color:white;
+    }
+    
+    .collection-store {
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        border: none;
+        overflow: hidden;
+
+    }
+    .collection-store .collection-item{
+        height: 40px;
+    }
+    
+    .collection-store .col {
+        padding: .75rem;
+    }
+    
+    .collection-stores {
+        margin-bottom: 60px;
+        overflow: hidden;
+
+    }
+    
+     .collection-stores ul{
+        border-bottom: .4px solid #e0e0e0;
+
+    }
+    .store-img-wrap {
+        width: 30%;
+        height: 100%;
+            min-width: 80px;
+    }
+    
+    .store-img-wrap img {
+        float: left;
+        height: 100%;
+    }
+    .store-text{
+        width: 40%;
+    }
+    .storeConnectionBtn {
+        width: 40%;
+         text-align: right;
+    }
+    
+    .storeConnectionBtn.connect a {
+        float: right;
+        background-color: #ffba34;
+    }
+
+    .storeConnectionBtn.connect a:hover{
+        background-color: #ffba34;
+    }
+    
+    .add-fridge_but-nav-group {
+        font-size: 20px;
+        font-weight: 500;
+        width: 100%;
+        bottom: 0;
+        position: fixed;
+        z-index: 2;
+    }
+    
+    .add-fridge_but-nav-group>div {
+        padding: 6px;
+    }
+    
+    .add-fridge_but-nav-group>div>a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    /* DEMAT*/
+    
+    .btn-flat,
+    .btn-flat i {
+        font-size: inherit;
+    }
+    
+    .btn-flat {
+        color: #00685B;
+        padding: 0;
+    }
+    
+    .btn-flat i {
+        font-size: 26px;
+    }
+
+    .disconnectStoreBtn .storeConnectionBtnText{
+        color:red;
+    } 
+
+    .connectStoreBtn .storeConnectionBtnText{
+        color:green;
+    } 
+</style>
+<div>
+                <div class="row collection-stores ">
+                    <template id="templateStoreConnectionItem"><ul class="collection collection-store col s12 valign-wrapper">
+                        <li class="test collection-item col s12 valign-wrapper">
+                            <div class="store-img-wrap">
+                                <img class="store-img" src="https://upload.wikimedia.org/wikipedia/en/3/3c/Netto_Logo.svg" alt="">
+                            </div>
+                            <div class="store-text">
+                                <p class="storeNameText" style="color: black; font-size: 18px; padding-left: 10px;">Netto</p>
+                            </div>
+                            <div class="storeConnectionBtn">
+                                <span style="font-size: 18px; padding-left: 10px;" class="storeConnectionBtnText">Connect</span>
+                            </div>
+                           <!--  <div class="storeConnectionBtn waves-effect waves-light btn">
+                                <span  class="storeConnectionBtnText">Connect</span>
+                            </div> -->
+                        </li>
+                    </ul></template>
+                </div>
+            </div>
+            <div class="add-fridge_but-nav-group">
+                <div class="left">
+                </div>
+                <div class="right">
+                    <a class="waves-effect btn-flat store-accounts-next-step">
+                    <p class="left">NEXT</p> <i class="material-icons">chevron_right</i></a>
+                </div>
+            </div>

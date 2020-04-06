@@ -1,0 +1,176 @@
+
+<style>
+    #frame
+{
+      /*position:fixed;*/
+        height:100%;/*150vh*/
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: hidden;
+}
+#frame a {
+
+    text-decoration: none;
+    /*padding: 10px 20px 10px 20px;
+    border-radius: 15px;*/
+    border-style: solid;
+    border-width: 4px;
+    border-color: #FFF;
+    /*color: #FFF;*/
+
+}
+/*sliding navigation between the slides*/
+#frame ul {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    /*position: absolute;
+    left:0;*/
+    height:90%;
+    list-style-type: none;
+    -webkit-transform-style: preserve-3d;/*YAY lag is fixed on firefox*/
+    -ms-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#frame li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    float: left;
+    width: 100vw;
+    height: 100%;
+    color: #FFF;
+    text-align: center;
+}
+
+#frame li img {
+    height: 60%;
+    width: 100%;
+}
+
+#frame li h4 {
+    text-align: center;
+    color: #006254;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+#frame li p{
+    color: black;
+    margin: 0;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/*end of sliding navigation between the slides*/
+
+#frame-text{
+    flex-grow: 2;
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+#frame-text .skip, #frame-text .next {
+          cursor: pointer;
+          color: #006354;
+          font-weight:bold;
+          font-size: 18px;
+          line-height: 0px;
+          padding: 13px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+        }
+
+       #frame-text .skip {
+            float: left;
+            margin-left: 10px;
+        }
+        /* Position the "next button" to the right */
+       #frame-text .next {
+          float: right;
+          margin-right: 10px;
+          border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+       #frame-text .skip:hover, #frame-text .next:hover {
+          background-color: #006354;
+          color: white;
+        }
+
+       #frame-text .dot {
+          cursor:pointer;
+          height: 13px;
+          width: 13px;
+          margin: 10px 2px 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+
+       #frame-text .active, #frame-text .dot:hover {
+          background-color: #717171;
+        }
+        #frame #frame-text .dot.activeDot{
+          background-color:#5a5a5a;
+        }
+</style>
+
+ <div id="frame">
+    <ul>
+        <li>
+            <img src="images/e.jpg">
+                <h4>CONNECT TO YOUR STORES</h4>
+                <p>Less Waste will help you to add your shopped items into your list just by connect to the stores near by you. </p>
+        </li>
+        <li>
+            <img src="images/s.jpg">
+                <h4>ADD ITEMS INTO APP</h4>
+                <p>Beside items information you got from the stores, you can also insert item in manually just by one click and fill in the information.</p>
+        </li>
+       
+    </ul>
+    <div id="frame-text">
+        <a class="skip introduction-page-skip" onclick="">SKIP</a>
+        <span class="activeDot dot" onclick="carousel.previous();"></span> 
+        <span class="dot" onclick="carousel.next();"></span>
+        <a class="next introduction-page-next-slide" onclick="carousel.next();">&#10095;</a>
+    </div>
+</div>
+
+<script>
+    
+    var carousel;
+$(document).ready(function () {
+
+    carousel = $("#frame ul");
+
+    carousel.itemslide({
+        one_item: true //Set this for proper full screen navigation
+    }); //initialize itemslide
+    
+    carousel.on('changeActiveIndex', function(e) {
+      console.log("new pos: "+ carousel.getActiveIndex());
+      $(".dot").removeClass("activeDot")[(carousel.getActiveIndex())].classList.add("activeDot");
+      if(carousel.getActiveIndex()){
+        $("#frame").addClass("done");
+      }else{
+        $("#frame").removeClass("done");
+      }
+    });
+
+    $(window).resize(function () {
+        carousel.reload();
+
+    }); //Recalculate width and center positions and sizes when window is resized
+});
+</script>
