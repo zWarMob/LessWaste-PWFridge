@@ -17,9 +17,8 @@
      background-color: #00695c;
      background-image: url(../images/pexels-photo-616404-min.jpeg);
      background-repeat: no-repeat;
-    background-position: left -191px bottom 0px;
+    background-position: center;
      background-size: cover;
-     /*     background-color: #00695c;*/
  }
  
  .app-logo {
@@ -100,9 +99,13 @@
  .form-icons {
      margin-top: 20px;
  }
- 
- @media (min-width: 600px) {
- }
+
+@media only screen and (min-width: 601px){
+    .main{
+        height: calc(100% - 64px);
+        min-height: calc(450px - 64px);;
+    }
+}
  /*****
      DE-MATERIALIZE
 
