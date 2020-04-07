@@ -41,8 +41,8 @@ Date.prototype.customFormat = function(formatString){
 
      app = {
         //ELEMENTS
-        sp1: $("#senpai1"),
-        sp2: $("#senpai2"),
+        sp1: $("#loginTab"),
+        sp2: $("#appTab"),
         loader: $("#loader"),
         dialog: $(".dialog-container"),
         navbarHeader: $(".navbar__header"),
@@ -55,7 +55,7 @@ Date.prototype.customFormat = function(formatString){
 
         //page currently shown (it's going to load signup first)
         currentPage: "signup",
-        currentSenpai: $("#senpai1"),
+        currentSenpai: $("#loginTab"),
 
         //user object
         user: undefined,
@@ -194,7 +194,7 @@ Date.prototype.customFormat = function(formatString){
         });
     });
 
-    $("#senpai1 .login-register-btn").click(function(){
+    $("#loginTab .login-register-btn").click(function(){
         //if someone clicks on login/register button but is already authenticated with the same account and the email is not verified
         //then resend verification email and show swal
         if( app.user!=undefined && !app.user.emailVerified ){
@@ -240,7 +240,7 @@ Date.prototype.customFormat = function(formatString){
 
     });
 
-    $("#senpai1 .login-register-page-change a").click(switchLoginSignupPage);
+    $("#loginTab .login-register-page-change a").click(switchLoginSignupPage);
 
     // Add/remove item in the Fridge
     $(document).on( "click", ".modal-btn-add-product", function() {
@@ -313,17 +313,17 @@ Date.prototype.customFormat = function(formatString){
     }
 
     function loadSignupPage(){
-        $("#senpai1 .login-register-btn").text("Sign up");
-        $("#senpai1 .login-register-page-change span").text("Have an account?");
-        $("#senpai1 .login-register-page-change a").text("Log in!");
+        $("#loginTab .login-register-btn").text("Sign up");
+        $("#loginTab .login-register-page-change span").text("Have an account?");
+        $("#loginTab .login-register-page-change a").text("Log in!");
         app.currentPage = "signup";
         app.currentSenpai = app.sp1;
     }
 
     function loadLoginPage(){
-        $("#senpai1 .login-register-btn").text("Log in");
-        $("#senpai1 .login-register-page-change span").html("Don't have an account?");
-        $("#senpai1 .login-register-page-change a").text("Sign up!");
+        $("#loginTab .login-register-btn").text("Log in");
+        $("#loginTab .login-register-page-change span").html("Don't have an account?");
+        $("#loginTab .login-register-page-change a").text("Sign up!");
         app.currentPage = "login";
         app.currentSenpai = app.sp1;
     }
@@ -1013,7 +1013,7 @@ Date.prototype.customFormat = function(formatString){
         if(user!=undefined && user.uid != "c0lY7XoIgVMLGgxn06CbVlPrr5U2"){
             if (user!=undefined && user.emailVerified) {
                 requestPermission();
-                //show senpai2
+                //show appTab
                 showSenpai(2);
                 
                 app.docRefUserSettings = app.db.collection("user-settings").doc(user.uid);
@@ -1026,11 +1026,11 @@ Date.prototype.customFormat = function(formatString){
                         //check if user finished settup
                         //true
                         if(doc.data().isSetupFinished) {
-                            //load fridge page in senpai2
+                            //load fridge page in appTab
                             loadMyFridgePage();
                         //false
                         }else{
-                            // load setup page in senpai2
+                            // load setup page in appTab
                             loadIntroductionSetupPage();
                         }
                     } else {

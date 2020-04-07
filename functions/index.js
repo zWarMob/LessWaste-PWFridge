@@ -20,7 +20,6 @@ exports.sendExpiryNotification = functions.firestore.document('fridges/{userUid}
 
 	var daysLeftToExpiry = Math.ceil((product.expiryDate - new Date()) / (1000 * 3600 * 24));
 	if(daysLeftToExpiry>2){
-		console.log("Product won't expire soon: "+daysLeftToExpiry);
 		return;
 	}
 
@@ -35,7 +34,7 @@ exports.sendExpiryNotification = functions.firestore.document('fridges/{userUid}
 	    var payload = {
 	      notification: {
 	        title: 'You have an expiring product',
-	        body: `${product.name} will expire in ${daysLeft} day`
+	        body: `${product.name} will expire in ${daysLeft} day${daysLeft>1?"s":""}`
 	      }
 	    };
 
@@ -44,9 +43,7 @@ exports.sendExpiryNotification = functions.firestore.document('fridges/{userUid}
 	    	payload.notification.body = `${product.name} has expired`;
 	    }
 
-	    return admin.messaging().sendToDevice(userTokens, payload).then(function(response){
-	    	console.log("message sent :" +response);
-	    }).catch(function(err){
+	    return admin.messaging().sendToDevice(userTokens, payload).catch(function(err){
 	    	console.log("error sending: "+err);
 	    });
 
