@@ -55,7 +55,7 @@ Date.prototype.customFormat = function(formatString){
 
         //page currently shown (it's going to load signup first)
         currentPage: "signup",
-        currentSenpai: $("#loginTab"),
+        currentTab: $("#loginTab"),
 
         //user object
         user: undefined,
@@ -321,7 +321,7 @@ Date.prototype.customFormat = function(formatString){
         $("#loginTab .login-register-page-change span").text("Have an account?");
         $("#loginTab .login-register-page-change a").text("Log in!");
         app.currentPage = "signup";
-        app.currentSenpai = app.sp1;
+        app.currentTab = app.sp1;
     }
 
     function loadLoginPage(){
@@ -329,7 +329,7 @@ Date.prototype.customFormat = function(formatString){
         $("#loginTab .login-register-page-change span").html("Don't have an account?");
         $("#loginTab .login-register-page-change a").text("Sign up!");
         app.currentPage = "login";
-        app.currentSenpai = app.sp1;
+        app.currentTab = app.sp1;
     }
 
     function switchLoginSignupPage(page){
@@ -348,13 +348,13 @@ Date.prototype.customFormat = function(formatString){
         }
     }
 
-    function showSenpai(number){
+    function showTab(number){
         if(number==1){
-            app.currentSenpai = app.sp1;
+            app.currentTab = app.sp1;
             app.sp1.css("display","block");
             app.sp2.css("display","none");
         }else{
-            app.currentSenpai = app.sp2;
+            app.currentTab = app.sp2;
             app.sp1.css("display","none");
             app.sp2.css("display","block");
         }
@@ -1026,7 +1026,7 @@ Date.prototype.customFormat = function(formatString){
             if (user!=undefined && user.emailVerified) {
                 requestPermission();
                 //show appTab
-                showSenpai(2);
+                showTab(2);
                 
                 app.docRefUserSettings = app.db.collection("user-settings").doc(user.uid);
                 
