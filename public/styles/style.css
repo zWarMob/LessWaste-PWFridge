@@ -40,6 +40,10 @@ html {
   color: #000;
 }
 
+.login-demo{
+  width: 100%;
+}
+
 .login-register-btn {
   width: 100%;
   margin-top: 20px;

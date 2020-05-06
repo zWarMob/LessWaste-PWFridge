@@ -194,6 +194,10 @@ Date.prototype.customFormat = function(formatString){
         });
     });
 
+    $("#loginTab .login-demo").click(function(){
+        loginUser("petyozh@yahoo.com","Fr33R011");
+    });
+
     $("#loginTab .login-register-btn").click(function(){
         //if someone clicks on login/register button but is already authenticated with the same account and the email is not verified
         //then resend verification email and show swal
@@ -988,11 +992,19 @@ Date.prototype.customFormat = function(formatString){
         });
      }
 
-     function loginUser(){
-        firebase.auth().signInWithEmailAndPassword($("#email").val(), $("#password").val()).catch(function(error) {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
+     function loginUser(email, password){
+        if(email == undefined){
+            email = $("#email").val();
+        }
+
+        if(password == undefined){
+            password = $("#password").val();
+        }
+
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
         });
      }
 
