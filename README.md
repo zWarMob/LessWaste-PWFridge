@@ -1,3 +1,6 @@
+# LessWaste-PWFridge
+PWA to help you keep track of the expiry dates of the products in your fridge
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/zWarMob/LessWaste-PWFridge/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
