@@ -15,8 +15,8 @@ const firestore = admin.firestore();
  */
 
 exports.sendExpiryNotification = functions.firestore.document('fridges/{userUid}/products/{productId}').onCreate(event=>{
-	const product = event.data.data();
-	const userUid = event.params.userUid;
+	const product = event.data();
+	const userUid = event.ref.parent.parent.id;
 
 	var daysLeftToExpiry = Math.ceil((product.expiryDate - new Date()) / (1000 * 3600 * 24));
 	if(daysLeftToExpiry>2){
