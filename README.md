@@ -1,40 +1,57 @@
-# LessWaste-PWFridge
-PWA to help you keep track of the expiry dates of the products in your fridge
+# Welcome
 
-## Welcome to GitHub Pages
+Application site: https://pwfridge-89b1d.web.app/
 
-You can use the [editor on GitHub](https://github.com/zWarMob/LessWaste-PWFridge/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Use the "demo login" to quickly access and test the application
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Example of the app. Adding an item in one open instance would be shown on all instances.
+Try it! Open the same account from multiple devices and you will see changes be syncronised across devices
 
-### Markdown
+![](README/add.gif)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This project was created for the final bachelor exam @ KEA. [report in Google Docs](https://docs.google.com/document/d/1MjotXsuZB-YKlW65CZoylPl493uB-JoRWTrfuaRz9Fc/edit?usp=sharing )
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+# Technologies summary
 
-- Bulleted
-- List
+ - **PWA**
+ - **Offline** capabilities (through **service workers** generated with `Workbox`)
+ - _**Instant**_ (fast) **load** (application shell architecture and cached files thx to the manifest)
+ - **Push notifications** 
+ - **Cross platform** - desktop and mobile
+ - **Responsive web design** - to accomodate it being cross platform (using `Materialize.css`, material design library)
+ - **Interactive design** - `jQuery`, `Animate.css`, `SweetAlert2`, `Hammer.js` (for touch/drag interactions)
+ - **Single code base**
+ - **Serverless solution** - Using `Firebase` (from `Google`)
+ - **Authentication and authorization**
+ - **Real-time database** - displaying changes to the user without the need to refresh
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+# Features
 
-[Link](url) and ![Image](src)
-```
+## Progressive Web App (PWA)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Both web and standalone:
+Can be considered both a site and a standalone application. Both mobile and desktop with a single codebase!
 
-### Jekyll Themes
+Installation prompt on desktop and application added to recently installed programs list:
+![](README/desktopInstall.png)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/zWarMob/LessWaste-PWFridge/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Installation on mobile:
+![](README/mobileInstall.png)
 
-### Support or Contact
+### Notifications:
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Ability to notify users both desktop and mobile of expiring products**:
+
+desktop notification:
+
+![](README/notificationDesktop.png)
+
+mobile notification:
+![](README/notificationMobile.png)
+
+**Just a PoC. To test, you need two devices. Log in on both. Allow notifications on one and close the app. Now you can add a product that is near expiry or expired on the second device, and you should see a push notification on the first.
+
+### Offline capabilities:
+Application could work offline thanks to service workers that cache files. Firestore from firebase can be used while offline too. Data is synchronised accross devices when the device comes back online
