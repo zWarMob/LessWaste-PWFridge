@@ -1,5 +1,6 @@
 # Welcome
 
+Github Pages: https://zwarmob.github.io/LessWaste-PWFridge/
 Application site: https://pwfridge-89b1d.web.app/
 
 Use the "demo login" to quickly access and test the application
